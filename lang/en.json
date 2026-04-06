@@ -1,0 +1,17 @@
+{
+  "tokenActionHud": {
+    "cthack": {
+      "saves": "Saves",
+      "resources": "Resources",
+      "combat": "Combat",
+      "damage": "Damage",
+      "weapons": "Weapons",
+      "attacks": "Attacks",
+      "items": "Equipment",
+      "abilities": "Abilities",
+      "magic": "Magic",
+      "spells": "Spells",
+      "rituals": "Rituals"
+    }
+  }
+}
