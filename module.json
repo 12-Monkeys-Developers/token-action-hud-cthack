@@ -1,48 +1,47 @@
 {
-    "id": "token-action-hud-cthack",
-    "title": "Token Action HUD Cthulhu Hack",
-    "description": "Token Action HUD is a repositionable HUD of actions for a selected token.",
-    "version": "1.0.0",
-    "authors": [
-        {
-            "name": "Kristov"
-        }
-    ],
-    "esmodules": [
-        "scripts/init.mjs"
-    ],
-    "styles": [
-        "styles.css"
-    ],
-    "languages": [
-        {
-            "lang": "en",
-            "name": "English",
-            "path": "lang/en.json"
-        },
-        {
-            "lang": "fr",
-            "name": "Français",
-            "path": "lang/fr.json"
-        }
-    ],
-    "compatibility": {
-        "minimum": 13,
-        "verified": 13,
-        "maximum": 13
+  "id": "token-action-hud-cthack",
+  "title": "Token Action HUD Cthulhu Hack",
+  "description": "Token Action HUD is a repositionable HUD of actions for a selected token.",
+  "url": "#{URL}#",
+  "version": "#{VERSION}#",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
+  "authors": [
+    {
+      "name": "Kristov"
+    }
+  ],
+  "esmodules": ["scripts/init.mjs"],
+  "styles": ["styles.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
     },
-    "relationships": {
-        "requires": [
-            {
-                "id": "token-action-hud-core",
-                "type": "module",
-                "compatibility": {
-                    "minimum": "2.0.0",
-                    "verified": "2.0.16"
-                }
-            }
-        ],
-        "systems": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13,
+    "maximum": 13
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "token-action-hud-core",
+        "type": "module",
+        "compatibility": {
+          "minimum": "2.0.0",
+          "verified": "2.0.16"
+        }
+      }
+    ],
+    "systems": [
       {
         "id": "cthack",
         "type": "system",
@@ -50,6 +49,6 @@
           "verified": "5.6.0"
         }
       }
-        ]
-    }
+    ]
+  }
 }
