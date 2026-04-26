@@ -1,5 +1,5 @@
 export const MODULE_ID = "token-action-hud-cthack"
-export const REQUIRED_CORE_MODULE_VERSION = "2.0"
+export const REQUIRED_CORE_MODULE_VERSION = "2"
 
 export const GROUPS = [
   { id: "saves", nestId: "saves_saves", name: "tokenActionHud.cthack.saves", type: "system" },

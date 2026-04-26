@@ -73,6 +73,7 @@ export function createActionHandler(api) {
           img: weapon.img,
           info1: weapon.system.dice ? { text: weapon.system.dice } : undefined,
           info2: rangeLabel ? { text: rangeLabel } : undefined,
+          tooltip: weapon.system.description ? { content: weapon.system.description, direction: "UP" } : undefined,
           system: { actionType: "weapon", actionId: weapon.id, saveId },
         }
       })
@@ -80,12 +81,13 @@ export function createActionHandler(api) {
     }
 
     #buildItems() {
-      const items = this.actor.items.filter((i) => i.type === "item" && i.system.dice && i.system.dice !== "0")
+      const items = this.actor.items.filter((i) => i.type === "item")
       const actions = items.map((item) => ({
         id: `items-${item.id}`,
         name: item.name,
         img: item.img,
-        info1: { text: item.system.dice },
+        info1: item.system.dice && item.system.dice !== "0" ? { text: item.system.dice } : undefined,
+        tooltip: item.system.description ? { content: item.system.description, direction: "UP" } : undefined,
         system: { actionType: "item", actionId: item.id },
       }))
       this.addActions(actions, { id: "items", type: "system" })
@@ -102,6 +104,7 @@ export function createActionHandler(api) {
           img: ability.img,
           info1: hasUses ? { text: `${uses.value}/${uses.max}` } : undefined,
           cssClass: hasUses && uses.value === 0 ? "disabled" : "",
+          tooltip: ability.system.description ? { content: ability.system.description, direction: "UP" } : undefined,
           system: { actionType: "ability", actionId: ability.id },
         }
       })
@@ -119,6 +122,7 @@ export function createActionHandler(api) {
           name: spell.name,
           img: spell.img,
           info1: spell.system.dice ? { text: spell.system.dice } : undefined,
+          tooltip: spell.system.description ? { content: spell.system.description, direction: "UP" } : undefined,
           system: { actionType: "magic", actionId: spell.id },
         }))
         this.addActions(actions, { id: "spells", type: "system" })
@@ -130,6 +134,7 @@ export function createActionHandler(api) {
           name: ritual.name,
           img: ritual.img,
           info1: ritual.system.dice ? { text: ritual.system.dice } : undefined,
+          tooltip: ritual.system.description ? { content: ritual.system.description, direction: "UP" } : undefined,
           system: { actionType: "magic", actionId: ritual.id },
         }))
         this.addActions(actions, { id: "rituals", type: "system" })
@@ -144,6 +149,7 @@ export function createActionHandler(api) {
         img: attack.img,
         info1: { text: `${attack.system.nb}x` },
         info2: attack.system.hasDamageDice ? { text: attack.system.damageDice } : { text: `${attack.system.damage}` },
+        tooltip: attack.system.description ? { content: attack.system.description, direction: "UP" } : undefined,
         system: { actionType: "attack", actionId: attack.id },
       }))
       this.addActions(actions, { id: "attacks", type: "system" })
@@ -159,6 +165,7 @@ export function createActionHandler(api) {
           name: ability.name,
           img: ability.img,
           info1: hasUses ? { text: `${uses.value}/${uses.max}` } : undefined,
+          tooltip: ability.system.description ? { content: ability.system.description, direction: "UP" } : undefined,
           system: { actionType: "ability", actionId: ability.id },
         }
       })
